@@ -80,11 +80,12 @@ const server = new ApolloServer({
     resolvers,
   });
   
-  server.applyMiddleware({ app, path: '/graphql' });
+  server.applyMiddleware({ app, path: '/query' });
 
   const httpServer = createServer(app);
 server.installSubscriptionHandlers(httpServer);
 
-httpServer.listen({ port: 4000 }, () => {
-  console.log('Apollo Server on http://localhost:8000/graphql');
+httpServer.listen({ port: 3000 }, () => {
+  console.log('Apollo Server on http://localhost:3000/query');
 });
+
